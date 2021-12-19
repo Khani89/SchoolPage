@@ -35,11 +35,22 @@
             }
 
             public function getStudent(){
-                 $sql = "SELECT * FROM `registration` ";
+                 $sql = "SELECT * FROM `registration`a inner join studentsgrade s on a.studentgrade_id = s.studentgrade_id ";
                  $result = $this->db->query($sql);
                  return $result;
      
              }
+
+             public function getStudentsgrade(){
+                try{
+                    $sql = "SELECT * FROM `studentsgrade`;";
+                    $result = $this->db->query($sql);
+                    return $result;
+                }catch(PDOException $e) {
+                    echo $e->getMessage();
+                    return false;
+                }
+            }
     }
 
 

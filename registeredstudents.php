@@ -28,7 +28,7 @@
                 <td><?php echo $r['age'] ?></td>
                 <td><?php echo $r['gender'] ?></td>
                 <td><?php echo $r['dateofbirth'] ?></td>
-                <td><?php echo $r['studentgrade_id'] ?></td>
+                <td><?php echo $r['name'] ?></td>
                 <td><?php echo $r['parentsemailaddress'] ?></td>
                 <td><?php echo $r['parentscontactnumber'] ?></td>
             </tr>

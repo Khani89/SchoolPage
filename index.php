@@ -1,78 +1,98 @@
-
-
 <?php
         $title = 'index'; 
         require_once 'includes/header.php';
-        require_once 'database/conn.php'; 
+        
  
     
     ?>
-        <!--
-        - First Name
-        - Last Name
-        - Age
-        - Date of Birth (Use DatePicker)
-        - Student Grade(Grade 1, Grade 2, Grade 3, Grade 4, Grade 5, Grade 6)
-        - Parents Email Address
-        - Parents Contact Number
-        -->
+            <form method="post" action="success.php" enctype="multipart/form-data">
+    <div class="card card-dark bg-white text-black"  style="width: 100%; height: 100%";>
+    <br>
 
-    <h1 class="text-center">Registration for Students</h1>
+    <h1 class="text-center"> Welcome to "All for Learning Primary School" </h1>
+    <br>
+    <h5 class="text-center"> Click on the Student Registration tab to Register your child </h5>
+    <div class="card-body">
+      <br>  
+    <?php 
 
-    <form method="post" action="success.php">
-    <div class="form-group">
-            <label for="firstname">First Name</label>
-            <input type="text" class="form-control" id="firstname" name="firstname"> 
-        </div>
-        <div class="form-group">
-            <label for="lastname">Last Name</label>
-            <input type="text" class="form-control" id="lastname" name="lastname"> 
-        </div>
-        <div class="form-group">
-            <label for="age">Age</label>
-            <input type="text" class="form-control" id="age" name="age"> 
-        </div>
-        <div class="form-group">
-            <label for="gender">Gender</label>
-            <select class="form-control" id="gender" name="gender">
-                <option>Male</option>
-                <option>Female</option>                
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="dob">Date of Birth</label>
-            <input type="text" class="form-control" id="dob" name="dob"> 
-        </div>
-        <div class="form-group">
-            <label for="studentgrade">Student Grade</label>
-            <select class="form-control" id="studentgrade" name="studentgrade">
-                <option value="2">Grade 1</option>
-                <option>Grade 2</option>
-                <option>Grade 3</option>
-                <option>Grade 4</option>
-                <option>Grade 5</option>
-                <option>Grade 6</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="parentsemail">Parents Email address</label>
-            <input type="email" class="form-control" id="parentsemail" name="parentsemail"
-            aria-describedby="parentsemailHelp" >
-            <small id="parentsemailHelp" class="form-text text-muted">
-            We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="phone">Parents Contact Number</label>
-            <input type="text" class="form-control" id="phone" name="phone"
-            aria-describedby="phoneHelp" >
-            <small id="phoneHelp" class="form-text text-muted">
-            We'll never share your number with anyone else.</small>
-        </div>
-        
-        <button type="submit" name="submit" class="btn btn-success btn-block">Submit</button>
+
+        echo '<h5> All for Learning Primary has been around for over 50 years. As the name suggest     </h5>';
+        echo '<h5>  our primary focus is ensuring that all our students learn to the best of there  </h5>';
+        echo '<h5> abilities no matter what difficulty they may have. We believe that every child </h5>';
+        echo '<h5> can learn an that every child should learn. We welcome all first time students  </h5>';
+        echo '<h5> and we also welcome the return of our regular students who will be going in   </h5>';
+        echo '<h5> a new grade. We would also like to thank all the parents for choosing   </h5>';
+        echo '<h5> "All for Learning Primary" as the school for your child.  </h5>';
+
+
+
+
+?>
+
+<br>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php require_once 'includes/footer.php'; ?>
+<br>
+
+    </div>
+</div>
+<br>
+
+<br>
+
+</form>
+
+</head>
+
+<body >
+<form>
+    <div class="form-group" >
+           
+    <style>
+body {
+  background-image: url('school.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+
+
+
     </form>
     <br/>
     <br/>
     <br/>
     <br/>
-    <?php require_once 'includes/footer.php'; ?>
