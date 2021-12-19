@@ -2,12 +2,12 @@
     class crud{
         private $db;
 
-        function __construct($conn){
+        function __construct($conn){  
             $this->db = $conn;
         }
     
     
-        public function insert($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact){
+        public function insertstudent($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact){
 
             try{
                 $sql = "INSERT INTO registration (firstname, lastname, age, gender, dateofbirth, 
@@ -34,6 +34,12 @@
 
             }
 
+            public function getStudent(){
+                 $sql = "SELECT * FROM `registration` ";
+                 $result = $this->db->query($sql);
+                 return $result;
+     
+             }
     }
 
 

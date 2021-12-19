@@ -15,7 +15,7 @@
         $parentsemail = $_POST['parentsemail'];
         $parentscontact = $_POST['phone'];
 
-        $isSuccess = $crud->insert($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact);
+        $isSuccess = $crud->insertstudent($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact);
 
         if($isSuccess){
             echo '<h1 class= "text-center text-success">Your Child Has Been Registered!</h1>';
