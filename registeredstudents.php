@@ -12,12 +12,9 @@
             <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Date of Birth</th>
             <th>Student Grade</th>
-            <th>Parents Email Address</th>
-            <th>Parents Contact Number</th>
+            <th>Actions</th>
+
 
         </tr>
         <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -25,12 +22,8 @@
                 <td><?php echo $r['register_id'] ?></td>
                 <td><?php echo $r['firstname'] ?></td>
                 <td><?php echo $r['lastname'] ?></td>
-                <td><?php echo $r['age'] ?></td>
-                <td><?php echo $r['gender'] ?></td>
-                <td><?php echo $r['dateofbirth'] ?></td>
                 <td><?php echo $r['name'] ?></td>
-                <td><?php echo $r['parentsemailaddress'] ?></td>
-                <td><?php echo $r['parentscontactnumber'] ?></td>
+                <td><a href="view.php?id=<?php echo $r['register_id'] ?>" class="btn btn-primary">View</a></td>
             </tr>
         <?php }?>
     </table>

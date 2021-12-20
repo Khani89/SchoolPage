@@ -50,7 +50,20 @@
                     echo $e->getMessage();
                     return false;
                 }
-            }
+             }
+
+             public function getStudentDetails($id){
+                    $sql = "select * from registration a inner join studentsgrade s on a.studentgrade_id =s.studentgrade_id
+                    where register_id = :id";
+                    $stmt = $this->db->prepare($sql);
+                    $stmt->bindparam(':id', $id);
+                    $stmt->execute();
+                    $result = $stmt->fetch();
+                    return $result;
+                }
+    
+            
+    
     }
 
 
