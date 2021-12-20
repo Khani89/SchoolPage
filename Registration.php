@@ -1,5 +1,3 @@
-
-
 <?php
         $title = 'index'; 
         require_once 'includes/header.php';
