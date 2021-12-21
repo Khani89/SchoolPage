@@ -1,17 +1,17 @@
 <?php
     //Development Connection
-    //$host = '127.0.0.1';
-    //$db = 'schoolpage_db';
-    //$user = 'root';
-    //$pass = '';
-    //$charset = 'utf8mb4';
+    $host = '127.0.0.1';
+    $db = 'schoolpage_db';
+    $user = 'root';
+    $pass = '';
+    $charset = 'utf8mb4';
 
     //Remote Database Connection
-    $host = 'btoweyyxg5dkobaxmvo3-mysql.services.clever-cloud.com';
-    $db = 'btoweyyxg5dkobaxmvo3';
-    $user = 'uofhmymwfq9fetiu';
-    $pass = 'r24sH3WII772ZJx1QhSZ';
-    $charset = 'utf8mb4';
+    //$host = 'btoweyyxg5dkobaxmvo3-mysql.services.clever-cloud.com';
+    //$db = 'btoweyyxg5dkobaxmvo3';
+    //$user = 'uofhmymwfq9fetiu';
+    //$pass = 'r24sH3WII772ZJx1QhSZ';
+    //$charset = 'utf8mb4';
 
 
 
@@ -25,8 +25,11 @@
     }
 
     require_once 'crud.php';
+    require_once 'user.php';
     $crud = new crud($pdo);
+    $user = new user($pdo);
 
+    $user->insertUser("admin", "password");
 
 ?>
 

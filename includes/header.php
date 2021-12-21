@@ -1,3 +1,9 @@
+<?php
+
+include_once 'includes/session.php'
+
+?>
+ 
  <!doctype html>
 <html lang="en">
   <head>
@@ -28,6 +34,18 @@
           <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link active" href="Registration.php">Students Registration </a>
             <a class="nav-item nav-link" href="registeredstudents.php">Registered Students</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+          <?php
+                if(!isset ($_SESSION['userid'])){
+            
+            ?>
+            <a class="nav-item nav-link " href="login.php">Login <span class="sr-only">(current)</span></a>
+            <?php }else { ?>
+              <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?>! </span> <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link " href="logout.php">Logout <span class="sr-only">(current)</span></a>                        
+            <?php } ?>
           </div>
         </div>
       </nav>
