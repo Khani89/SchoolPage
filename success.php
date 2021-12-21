@@ -18,10 +18,11 @@
         $isSuccess = $crud->insertstudent($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact);
 
         if($isSuccess){
-            echo '<h1 class= "text-center text-success">Your Child Has Been Registered!</h1>';
+            include 'includes/successmessage.php';
+
         }
         else{
-            echo '<h1 class= "text-center text-danger">The process has Failed!</h1>';
+            include 'includes/errormessage.php';
         }
 
     }

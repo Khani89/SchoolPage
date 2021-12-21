@@ -8,7 +8,6 @@
 
         if(!isset($_GET['id']))
     {
-        //echo 'error';
         include 'includes/errormessage.php';
         header("Location: registeredstudents.php");
     }

@@ -17,7 +17,7 @@
             header("Location: registeredstudents.php");
         }
         else{
-            echo 'error';
+            echo 'includes/errormessage.php';
         }
         
     }

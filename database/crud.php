@@ -61,9 +61,14 @@
             }    
 
             public function getStudent(){
-                 $sql = "SELECT * FROM `registration`a inner join studentsgrade s on a.studentgrade_id = s.studentgrade_id ";
-                 $result = $this->db->query($sql);
-                 return $result;
+                try{
+                    $sql = "SELECT * FROM `registration`a inner join studentsgrade s on a.studentgrade_id = s.studentgrade_id ";
+                    $result = $this->db->query($sql);
+                    return $result;
+                }catch(PDOException $e) {
+                    echo $e->getMessage();
+                    return false;
+                }
      
             }
 
@@ -79,6 +84,7 @@
             }
 
              public function getStudentDetails($id){
+                 try{
                     $sql = "select * from registration a inner join studentsgrade s on a.studentgrade_id =s.studentgrade_id
                     where register_id = :id";
                     $stmt = $this->db->prepare($sql);
@@ -86,7 +92,26 @@
                     $stmt->execute();
                     $result = $stmt->fetch();
                     return $result;
+                 }catch(PDOException $e) {
+                    echo $e->getMessage();
+                    return false;
+                }
+                   
             }
+
+            public function deleteStudent($id){
+                try{
+                      $sql = "Delete from registration where register_id = :id";
+                      $stmt = $this->db->prepare($sql);
+                      $stmt->bindparam(':id', $id);
+                      $stmt->execute();
+                      return true;
+                }catch (PDOException $e) {
+                     echo $e->getMessage();
+                     return false;
+                }
+     
+             }
     
             
     
