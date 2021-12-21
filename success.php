@@ -3,7 +3,7 @@
 
     require_once 'includes/header.php'; 
     require_once 'database/conn.php';
-
+    require_once 'sendemail.php';
 
     if(isset($_POST['submit'])){
         $fname = $_POST['firstname'];
@@ -16,8 +16,10 @@
         $parentscontact = $_POST['phone'];
 
         $isSuccess = $crud->insertstudent($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact);
+        $specialtyName = $crud->getStudentById($studentgrade); 
 
         if($isSuccess){
+            sendemail::SendMail($email, 'Welcome to All for Learninig Primary', 'Your child has been registered successfully to our School');
             include 'includes/successmessage.php';
 
         }
@@ -46,7 +48,7 @@
                     Date of Birth: <?php echo $_POST['dob']; ?> 
                 </p>
                 <p class="card-text">
-                    Grade: <?php echo $_POST['studentgrade']; ?> 
+                    Grade: <?php echo $specialtyName['name']; ?> 
                 </p>
                 <p class="card-text">
                     Parents Email Address: <?php echo $_POST['parentsemail']; ?> 

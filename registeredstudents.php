@@ -2,6 +2,7 @@
     $title = 'Registered Students'; 
 
     require_once 'includes/header.php';
+    require_once 'includes/auth_check.php';
     require_once 'database/conn.php'; 
 
     $results = $crud->getStudent();      

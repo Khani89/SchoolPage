@@ -111,10 +111,23 @@
                      return false;
                 }
      
-             }
-    
+            }
+
+            public function getStudentById($id){
+                try{
+                    $sql = "SELECT * FROM `studentsgrade` where studentgrade_id = :id";
+                    $stmt = $this->db->prepare($sql);
+                    $stmt->bindparam(":id", $id);
+                    $stmt->execute();
+                    $result = $stmt->fetch();
+                    return $result;
+                }catch(PDOException $e) {
+                    echo $e->getMessage();
+                    return false;
+                }
+            }
             
-    
+            
     }
 
 
