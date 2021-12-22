@@ -13,6 +13,7 @@
         $result = $crud->getStudentDetails($id);
 
 ?>
+<img src="<?php echo empty($result['avatar_path']) ? "uploads/blank.jpg" : $result['avatar_path']; ?>" class="rounded-circle"style="width:30%; height: 30%" />
 <div class="card" style="width: 20rem;">
             <div class="card-body">
                 <h5 class="card-title">

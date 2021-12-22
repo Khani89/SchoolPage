@@ -23,8 +23,7 @@ include_once 'includes/session.php'
     <title>School Page - <?php echo $title ?></title>
   </head>
   <body>
-      <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,4 +48,6 @@ include_once 'includes/session.php'
           </div>
         </div>
       </nav>
+      <div class="container">
+      
 <br/>

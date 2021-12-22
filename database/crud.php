@@ -7,12 +7,12 @@
         }
     
     
-        public function insertstudent($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact){
+        public function insertstudent($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact,$avatar_path){
 
             try{
                 $sql = "INSERT INTO registration (firstname, lastname, age, gender, dateofbirth, 
-                studentgrade_id, parentsemailaddress, parentscontactnumber) 
-                VALUES(:fname,:lname,:age,:gender,:dob,:studentgrade,:parentsemail,:parentscontact) ";
+                studentgrade_id, parentsemailaddress, parentscontactnumber,avatar_path) 
+                VALUES(:fname,:lname,:age,:gender,:dob,:studentgrade,:parentsemail,:parentscontact,:avatar_path) ";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':fname',$fname);
                 $stmt->bindparam('lname',$lname);
@@ -22,6 +22,7 @@
                 $stmt->bindparam(':studentgrade',$studentgrade);
                 $stmt->bindparam(':parentsemail',$parentsemail);
                 $stmt->bindparam(':parentscontact',$parentscontact);
+                $stmt->bindparam(':avatar_path',$avatar_path);
 
                 $stmt->execute();
                 return true;

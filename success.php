@@ -15,11 +15,17 @@
         $parentsemail = $_POST['parentsemail'];
         $parentscontact = $_POST['phone'];
 
-        $isSuccess = $crud->insertstudent($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact);
+        $orig_file = $_FILES["avatar"]["tmp_name"];
+        $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+        $target_dir = 'uploads/';
+        $destination = "$target_dir$parentscontact.$ext";
+        move_uploaded_file($orig_file,$destination);
+
+        $isSuccess = $crud->insertstudent($fname, $lname, $age, $gender, $dob, $studentgrade, $parentsemail, $parentscontact, $destination);
         $specialtyName = $crud->getStudentById($studentgrade); 
 
         if($isSuccess){
-            sendemail::SendMail($email, 'Welcome to All for Learninig Primary', 'Your child has been registered successfully to our School');
+            sendemail::SendMail($parentsemail, 'Welcome to All for Learninig Primary', 'Your child has been registered successfully to our School');
             include 'includes/successmessage.php';
 
         }
@@ -31,8 +37,7 @@
 
     
 ?>
-
-
+        <img src="<?php echo $destination; ?>" class="rounded-circle"style="width:30%; height: 30%" />
         <div class="card" style="width: 20rem;">
             <div class="card-body">
                 <h5 class="card-title">

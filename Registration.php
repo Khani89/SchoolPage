@@ -18,7 +18,8 @@
 
     <h1 class="text-center">Registration for Students</h1>
 
-    <form method="post" action="success.php">
+    
+    <form method="post" action="success.php" enctype="multipart/form-data".>
     <div class="form-group">
             <label for="firstname">First Name</label>
             <input required type="text" class="form-control" id="firstname" name="firstname"> 
@@ -57,6 +58,7 @@
             <small id="parentsemailHelp" class="form-text text-muted">
             We'll never share your email with anyone else.</small>
         </div>
+        <br/>
         <div class="form-group">
             <label for="phone">Parents Contact Number</label>
             <input required type="text" class="form-control" id="phone" name="phone"
@@ -64,7 +66,12 @@
             <small id="phoneHelp" class="form-text text-muted">
             We'll never share your number with anyone else.</small>
         </div>
-        
+        <div class="custom-file">
+            <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
+            <label class="custom-file-label" for="avatar">Choose File</label>
+            <small id="avatar" class="form-text text-primary">File Upload is Optional</small>
+        </div>
+    
         <button type="submit" name="submit" class="btn btn-success btn-block">Submit</button>
     </form>
     <br/>
