@@ -1,6 +1,6 @@
 
 
-    <div id="footer" class="p-3 bg-primary text-white fixed-bottom"> 
+    <div id="footer" class=" bg-primary text-white fixed-bottom"> 
         <p class="text-center">Copyright &copy; - All For Learning Primary Registration System <?php echo date('Y'); ?>
             
         </p>
